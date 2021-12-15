@@ -45,7 +45,7 @@ freeze3_gwas
 ## Usage
 ### STEP 1: Run the GWAS step for genotyped studies
 
-1. Review the studies in config/dosage_locations_f3.csv and make sure each study that should be included has the value in the exclude column set to 0 (note that each of the included studies must have a related fam file inside the datadir defined in run_trauma_gwas_v2_freeze3.slurm as well as .pheno and .cov files in the pheno directory)
+1. Review the studies in config/dosage_locations_f3.csv and make sure each study that should be included has the value in the exclude column set to 0 (note that each of the included studies must have a related fam file inside the datadir defined in run_trauma_gwas_v2_freeze3_allcase.slurm as well as .pheno and .cov files in the pheno directory)
 2. Run the header block of the 01_f3_gwas_v1_allcase.sh script that sets the RUNTYPE and sex variables
 3. In the 01_f3_gwas_v1_allcase.sh script, look for the code block that begins with ### 1)Study Level Analysis steps and run it.
 4. Wait for the slurm jobs for each study to finish running (about 3 hours)
