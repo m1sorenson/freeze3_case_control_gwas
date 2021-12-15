@@ -1,0 +1,64 @@
+	study_id	broad_weight	males_weight	females_weight	broad_freq	male_freq	female_freq	weighted/unweighted
+1. 1	MRSC	758	2310	0				unweighted
+1. 1	MRSCCVC	181	174	8				unweighted
+1. 2	ONGA	211	162	50				unweighted
+1. 5	NHS2	1301	0	1320				unweighted
+1. 7	FSCD	352	267	265				unweighted
+1. 8	COGA	205	336	654				unweighted
+1. 9	COGB	181	363	459				unweighted
+"1. 11,12"	MINV	NA	205	9				unweighted
+1. 13	GFK	165	483	49				unweighted
+1. 13	VAKN	411	1511	151				unweighted
+1. 14	NSS1	3739	4176	674				unweighted
+1. 15	NSS2	1858	1536	322				unweighted
+1. 16	PPDS	2329	4641	193				unweighted
+1. 21	GUTS	516	137	379				unweighted
+1. 22	NHSY	5263	0	5263				unweighted
+1. 25	PRIS	390	743	77				unweighted
+1. 33	RING	113	180	0				unweighted
+1. 36	BRY2	115	53	64				unweighted
+1. 40	NIUT	86	0	89				unweighted
+1. 41	NCMH	1137	421	716				unweighted
+1. 42	EACR	208	88	210				unweighted
+1. 43	WACH	112	0	112				unweighted
+1. 47	GTPC	181	68	115				unweighted
+1. 50	COM1	162	154	10				unweighted
+1. 52	FTCB	313	992	47				unweighted
+1. 54	GRAC	168	0	169				unweighted
+1. 55	GALI	207	207	0				unweighted
+1. 73	AURO	157	80	149				unweighted
+1. 87	ONGB	135	369	49				unweighted
+2. 6	GSDC	867	355	476				weighted
+2. 10	BRYA	303	147	152				weighted
+"2. 17-21,61"	PTS1	538	266	267				weighted
+2. 35	STRO	1098	1025	72				weighted
+2. 37-39	PSY3	428	164	263				weighted
+2. 48	BETR	99	97	1				weighted
+2. 49	SEEP	631	426	204				weighted
+2. 56-59	WRBY	418	399	9				weighted
+"2. 64,68,70,71"	PSY5	483	343	137				weighted
+2A. 24	VETS	287	1088	0				weighted
+2A. 60	UKBB	40145	59552	76251				weighted
+3. 26	MIRE	823	686	136	FRQ_U_405	FRQ_U_343	FRQ_U_62	weighted
+3. 27	INTR	187	122	31	FRQ_U_116	FRQ_U_55	NA	weighted
+3. 28	DAMI	1504	1343	142	FRQ_U_2019	FRQ_U_1919	FRQ_U_100	weighted
+3. 30	QIMR	1101	365	711	FRQ_U_1797	FRQ_U_934	FRQ_U_863	weighted
+3. 31	NCPT	421	242	162	FRQ_U_162	FRQ_U_84	FRQ_U_78	weighted
+3. 32	TRAC	148	143	17	FRQ_U_49	FRQ_U_49		weighted
+3. 75	WTCS	NA	1366	92				weighted
+3. 86	AGDS	NA	2490	8197				weighted
+3. 92	CANA	3070	NA	NA				weighted
+3. 93	QIM2	759	194	563				weighted
+3. 94	RCOG	1778	NA	NA				weighted
+3. 96	WTCM	178	NA	NA				weighted
+4. 74	DAI2	55804	23106	31576	FRQ_U_36548	FRQ_U_18793	FRQ_U_17748	weighted
+4. 79	BIOV	24266	8436	15730				weighted
+4. 81	MGBB	16113	6729	9315				weighted
+4. 85	HUNT	11938	NA	NA				weighted
+4. 89	SWED	1264	NA	NA				weighted
+4. 90	FING	37725	11712	25915				weighted
+4. 91	UKB2	36541	12424	23901				weighted
+4. 95	BIOM	1230	2038	4947				weighted
+4. 98	ESBB	71022	16714	53822				weighted
+4. 99	MAYO	3792	1399	2330				weighted
+5	MVP	NA	NA	NA				weighted

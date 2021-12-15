@@ -1,0 +1,618 @@
+
+###PGC-PTSD analyst datasets
+
+ MARKERLABEL   ID
+ ALLELELABELS  A1 AX
+ PVALUELABEL   P
+ EFFECTLABEL   LOG(OR)
+ SCHEME STDERR
+ STDERR LOG(OR)_SE
+ GENOMICCONTROL OFF
+ #CUSTOMVARIABLE OBS_CT
+ WEIGHTLABEL FAKE
+ FREQLABEL A1_FREQ
+ AVERAGEFREQ ON
+ MINMAXFREQ ON
+ ADDFILTER A1_FREQ >= 0.01
+ TRACKPOSITIONS ON #Turn off for analyze het
+ CHROMOSOME CHROM
+ POSITION POS
+
+#Notes: Check on if you need to rescale
+
+ ##Analysis group 1: Continuous PTSD measure studies
+ #TODO: add DEFAULTWEIGHT to each study
+  #1 MRSC
+   DEFAULTWEIGHT 758
+   PROCESS results_cat/mrsc_mrsc_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #1 MRSC (CVC)
+   DEFAULTWEIGHT 181
+   PROCESS results_cat/mrsc_cvc_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #2 ONGA
+   DEFAULTWEIGHT 211
+   PROCESS results_cat/onga_onga_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #5 NHS2
+   DEFAULTWEIGHT 1301
+   PROCESS results_cat/nhs2_nhs2_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #7 FSCD
+   DEFAULTWEIGHT 352
+   PROCESS results_cat/fscd_fscd_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #8 COGA
+   DEFAULTWEIGHT 205
+   PROCESS results_cat/coga_coga_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #9 COGB
+   DEFAULTWEIGHT 181
+   PROCESS results_cat/cogb_cogb_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #11 and 12 MINV
+   #DEFAULTWEIGHT NA
+   #PROCESS results_cat/minv_minv_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #13 GFK
+   DEFAULTWEIGHT 165
+   PROCESS results_cat/nhrv_gfk_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #13 VAKN
+   DEFAULTWEIGHT 411
+   PROCESS results_cat/nhrv_vakn_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #14 NSS1
+   DEFAULTWEIGHT 3739
+   PROCESS results_cat/nss1_nss1_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #15 NSS2
+   DEFAULTWEIGHT 1858
+   PROCESS results_cat/nss2_nss2_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #16 PPDS
+   DEFAULTWEIGHT 2329
+   PROCESS results_cat/nss1_ppds_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #21 GUTS
+   DEFAULTWEIGHT 516
+   PROCESS results_cat/psy2_guts_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #22 NHSY
+   DEFAULTWEIGHT 5263
+   PROCESS results_cat/psy2_nhsy_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #25 PRISMO
+   DEFAULTWEIGHT 390
+   PROCESS results_cat/pris_pris_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #33 RING
+   DEFAULTWEIGHT 113
+   PROCESS results_cat/ring_ring_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #36 BRY2
+   DEFAULTWEIGHT 115
+   PROCESS results_cat/psy3_bry2_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #40 NIUT
+   DEFAULTWEIGHT 86
+   PROCESS results_cat/psy3_niut_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #41 NCMH
+   DEFAULTWEIGHT 1137
+   PROCESS results_cat/psy3_ncmh_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #42 EACR
+   DEFAULTWEIGHT 208
+   PROCESS results_cat/psy3_eacr_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #43 WACH
+   DEFAULTWEIGHT 112
+   PROCESS results_cat/meg2_wach_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #47 GTPC
+   DEFAULTWEIGHT 181
+   PROCESS results_cat/gtpc_gtpc_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #50 COM1
+   DEFAULTWEIGHT 162
+   PROCESS results_cat/comc_comc_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #52 FTCB
+   DEFAULTWEIGHT 313
+   PROCESS results_cat/ftca_ftcb_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #54 GRAC
+   DEFAULTWEIGHT 168
+   PROCESS results_cat/grac_grac_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #55 GALI (GMRF)
+   DEFAULTWEIGHT 207
+   PROCESS results_cat/gali_gali_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #73 AURO
+   DEFAULTWEIGHT 157
+   PROCESS results_cat/auro_auro_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+  #87 ONGB
+   DEFAULTWEIGHT 135
+   PROCESS results_cat/ongb_ongb_eur_pcs.PHENO1.assoc.chr{CHR_NUM}.gz
+
+
+ ##Analysis group 2: Case control studies with genotype access
+
+  EFFECTLABEL  LOG(OR)
+  WEIGHTLABEL FAKE #OBS_CT is in this data, and counts total N but not effective N. I change the weight label to instead set the weight by hand!
+
+ #6 GSDC
+  DEFAULTWEIGHT 867
+  PROCESS results_cat/gsdc_gsdc_eur_pcs.Case.assoc.chr{CHR_NUM}.gz
+
+ #10 BRYA
+  DEFAULTWEIGHT 303
+  PROCESS results_cat/brya_brya_eur_pcs.Case.assoc.chr{CHR_NUM}.gz
+
+ #17 and 18 19 20 21 and 61 KSUD BOBA KMCT PORT GUTS KMC2
+  DEFAULTWEIGHT 538
+  PROCESS results_cat/pts1_pts1_eur_pcs.Case.assoc.chr{CHR_NUM}.gz
+
+ #35 STRO
+  DEFAULTWEIGHT 1098
+  PROCESS results_cat/stro_stro_eur_pcs.Case.assoc.chr{CHR_NUM}.gz
+
+ #37 and 38 and 39 FEEN DCSR and TEIC
+  DEFAULTWEIGHT 428
+  PROCESS results_cat/psy3_feen_eur_pcs.Case.assoc.chr{CHR_NUM}.gz
+
+ #48 BETR
+  DEFAULTWEIGHT 99
+  PROCESS results_cat/betr_betr_eur_pcs.Case.assoc.chr{CHR_NUM}.gz
+
+ #49 SEEP
+  DEFAULTWEIGHT 631
+  PROCESS results_cat/psy4_psy4_eur_pcs.Case.assoc.chr{CHR_NUM}.gz
+
+ #56 and 57 58 59 YEHU BAKE VRIS WANG
+  DEFAULTWEIGHT 418
+  PROCESS results_cat/wrby_wrby_eur_pcs.Case.assoc.chr{CHR_NUM}.gz
+
+ #64 and 68 and 70 and 71  BRLS DGTP DSAS STAR DELB
+  DEFAULTWEIGHT 483
+  PROCESS results_cat/psy5_psy5_eur_pcs.Case.assoc.chr{CHR_NUM}.gz
+
+
+ ## Group 1A: BOLT LMM continuous datasets
+  MARKERLABEL  SNP
+  ADDFILTER INFO > 0.6
+  PVALUELABEL   P
+  CHROMOSOME CHR
+  POSITION BP
+  ALLELELABELS  ALLELE1 ALLELE0
+  FREQLABEL A1FREQ
+  EFFECTLABEL LOG(OR)
+  STDERR SE
+  PVALUELABEL P_BOLT_LMM_INF
+
+  #24 VETS
+   DEFAULTWEIGHT 287
+   PROCESS sumstats/bychr/VETS_broad_eur_allcase.chr{CHR_NUM}.txt.gz
+
+
+  #60 UKBB
+   DEFAULTWEIGHT 40144
+   PROCESS sumstats/bychr/UKBB_broad_eur_allcase.chr{CHR_NUM}.txt.gz
+
+
+###Group 3: Other analyst summary datasets
+
+ ##Freeze 2
+  MARKERLABEL  SNP
+  ADDFILTER INFO > 0.6
+  PVALUELABEL   P
+  ALLELELABELS A1 A2
+  CHROMOSOME CHR
+  POSITION BP
+  EFFECTLABEL  LOG(OR)
+  STDERR SE
+
+  #26 MIRE
+   FREQLABEL FRQ_U_405
+   DEFAULTWEIGHT 823
+   PROCESS sumstats/bychr/MIRE_broad_eur.chr{CHR_NUM}.txt.gz
+
+  #27 INTR
+   FREQLABEL FRQ_U_116
+   DEFAULTWEIGHT 187
+   PROCESS sumstats/bychr/INTR_broad_eur.chr{CHR_NUM}.txt.gz
+
+  #28 DAMI
+   FREQLABEL FRQ_U_2019
+   DEFAULTWEIGHT 1504
+   PROCESS sumstats/bychr/DAMI_broad_eur.chr{CHR_NUM}.txt.gz
+
+  #29 DAIP. EXCLUDED!!! OVERLAPS WITH DAI2!
+   ###FREQLABEL FRQ_U_2721  #DONT INCLUDE!!
+   ###DEFAULTWEIGHT 2140    #DONT INCLUDE!!
+   ###PROCESS Xsumstats/bychr/daner_DBS_23.gz.maf01.gz_{CHR_NUM} #DONT INCLUDE!!!
+
+  #30 QIMR:
+   FREQLABEL FRQ_U_1797
+   DEFAULTWEIGHT 1101
+   PROCESS sumstats/bychr/QIMR_broad_eur.chr{CHR_NUM}.txt.gz
+
+  #31 NCPT
+   FREQLABEL FRQ_U_162
+   DEFAULTWEIGHT 421
+   PROCESS sumstats/bychr/NCPT_broad_eur.chr{CHR_NUM}.txt.gz
+
+  #32 TRAC
+   FREQLABEL FRQ_U_49
+   DEFAULTWEIGHT 148
+   PROCESS sumstats/bychr/TRAC_broad_eur.chr{CHR_NUM}.txt.gz
+
+  REMOVE FILTERS
+
+ ##New F3 summary data following non-standard formats:
+
+  #75 WTCS . Re-formatting: AFs merged with data, SNP names added based on refernece database
+   MARKERLABEL   SNP
+   ALLELELABELS  A1 A2
+   PVALUELABEL   P
+   EFFECT   BETA
+   FREQLABEL FRQ
+    ADDFILTER FRQ >= 0.01
+    ADDFILTER  FRQ <= 0.99
+   CHROMOSOME CHROM
+   POSITION POS
+   WEIGHTLABEL OBS_CT
+
+   PROCESS sumstats/bychr/WTCS_broad_eur.chr{CHR_NUM}.txt.gz
+
+   REMOVE FILTERS
+
+  #86 AGDS. #saige format # Per caroline on 6/22, selecting PTSDsum_AGDS_full.QIMRB.zip
+   MARKERLABEL   rsSNP
+   ALLELELABELS  Allele2 Allele1
+   PVALUELABEL   p.value
+   EFFECT   BETA
+   FREQLABEL AF_Allele2
+    ADDFILTER AF_Allele2 >= 0.01
+    ADDFILTER  AF_Allele2 <= 0.99
+   ADDFILTER Rsq > 0.6
+   CHROMOSOME CHR
+   POSITION POS
+   WEIGHTLABEL N
+
+   PROCESS sumstats/bychr/AGDS_broad_eur.chr{CHR_NUM}.txt.gz
+
+   REMOVE FILTERS
+
+  #92 CANA
+
+   MARKERLABEL   ID
+   ALLELELABELS  A1 AX
+   PVALUELABEL   P
+   EFFECT   LOG(OR)
+   STDERR   LOG_OR_SE
+   FREQLABEL A1_FREQ
+    ADDFILTER A1_FREQ >= 0.01
+    ADDFILTER  A1_FREQ <= 0.99
+   CHROMOSOME CHROM
+   POSITION POS
+   WEIGHTLABEL FAKE
+   DEFAULTWEIGHT 3070
+
+   PROCESS sumstats/bychr/CANA_broad_eur.chr{CHR_NUM}.txt.gz
+
+   REMOVE FILTERS
+
+  #93 QIM2 #Per Caroline on 6/22, selecting PTSDyn_others_full.QIMRB.zip and  PTSDsum_PI_full.QIMRB.zip
+
+   #93A PISA QT . PER JULY DISCUSSION WITH CAROLINE, DO NOT USE! IT OVERLAPS WITH THE 93B!
+   # MARKERLABEL   rsSNP
+   # ALLELELABELS  Allele2 Allele1
+   # PVALUELABEL   p.value
+   # EFFECT   BETA
+   # FREQLABEL AF_Allele2
+    # ADDFILTER AF_Allele2 >= 0.01
+    # ADDFILTER  AF_Allele2 <= 0.99
+   # ADDFILTER Rsq > 0.6
+   # CHROMOSOME CHR
+   # POSITION POS
+   # WEIGHTLABEL N
+
+    # PROCESS  sumstats/bychr/PTSDsum_PI_full_19052021.QIMRB.txt.gz_{CHR_NUM}
+
+   # REMOVE FILTERS
+
+   #93B "others" case/control
+
+   MARKERLABEL   rsSNP
+   ALLELELABELS  Allele2 Allele1
+   PVALUELABEL   p.value
+   EFFECT   BETA
+   STDERR   SE
+   FREQLABEL AF_Allele2
+    ADDFILTER AF_Allele2 >= 0.01
+    ADDFILTER  AF_Allele2 <= 0.99
+   ADDFILTER Rsq > 0.6
+   CHROMOSOME CHR
+   POSITION POS
+
+   WEIGHTLABEL FAKE
+   DEFAULTWEIGHT 759
+
+    PROCESS sumstats/bychr/QIM2_broad_eur.chr{CHR_NUM}.txt.gz
+
+   REMOVE FILTERS
+
+  #94 RCOG #There are sx in 1281 subjects, but PTSD in 3510.
+  #A1 bim and a2 bim are not clear
+  #by Email from liz, 522 cases . Which should mean 3510 - 522 = 2988 controls
+
+   #MARKERLABEL   SNP
+   #ALLELELABELS  A1 A2
+   #PVALUELABEL   P
+   #EFFECT   Beta
+   #STDERR   SE
+   #FREQLABEL Freq
+    #ADDFILTER Freq >= 0.01
+    #ADDFILTER  Freq <= 0.99
+   #CHROMOSOME CHR
+   #POSITION BP
+
+   #WEIGHTLABEL FAKE
+   #DEFAULTWEIGHT 1778
+    #PROCESS sumstats/bychr/RCOG_broad_eur.chr{CHR_NUM}.txt.gz
+
+   #REMOVE FILTERS
+
+  #96 WTCM: Data re-annotated: Had to merge in SNP name, allele and frequency information from doner data (DAI2). Merged based on chr:bp!
+
+   MARKERLABEL   SNP
+   ALLELELABELS  A1 A2
+   PVALUELABEL   P
+   EFFECT   LOG(OR)
+   STDERR   SE
+   FREQLABEL FRQ_U_36548
+    ADDFILTER FRQ_U_36548 >= 0.01
+    ADDFILTER  FRQ_U_36548 <= 0.99
+   CHROMOSOME CHR
+   POSITION BP
+
+   WEIGHTLABEL FAKE
+   DEFAULTWEIGHT 178
+    PROCESS sumstats/bychr/WTCM_broad_eur.chr{CHR_NUM}.txt.gz
+
+   REMOVE FILTERS
+
+### EHR
+
+
+ #For SSW uncomment this:
+  WEIGHTLABEL FAKE  #Since I am using custom weights (neff), ignore any N column by saying that N should be in a column that doesn't exist
+
+ ##74 DAI2. Broad definition.  22564 cases   and 36548 controls. PLINK (Ricopili format).
+  #Note for this to be 100% perfect, I need an overall allele freq estimate, as opposed to using controls
+  ALLELELABELS  A1 A2
+  CHROMOSOME CHR
+  POSITION BP
+  MARKERLABEL   SNP
+  PVALUELABEL   P
+  FREQLABEL FRQ_U_36548
+   ADDFILTER FRQ_U_36548 >= 0.01
+   ADDFILTER FRQ_U_36548 <= 0.99
+  ADDFILTER INFO > 0.6
+  EFFECT LOG(OR)
+
+  #IVW details:
+  STDERR SE
+  #SSW details:
+  WEIGHTLABEL FAKE
+   DEFAULTWEIGHT 55804
+
+  PROCESS sumstats/bychr/DAI2_broad_eur.chr{CHR_NUM}.txt.gz
+
+   REMOVEFILTERS
+
+ ##79 BIOV. Broad PHENO2: PTSD broad defintion - both sexes n = 72,824 n cases = 6,679 n controls = 66,145. PLINK2 logistic format Z STAT. Data re-annotated: Added the bonafide coded allele, AX was not exported from PLINK2.
+  ALLELELABELS  A1 A2
+  CHROMOSOME X.CHROM
+  POSITION POS
+  MARKERLABEL   ID
+  PVALUELABEL   P
+  FREQLABEL A1_Freq
+   ADDFILTER A1_Freq  >= 0.01
+   ADDFILTER A1_Freq  <= 0.99
+  EFFECT LOG(OR)
+
+  #IVW details:
+  STDERR LOG.OR._SE
+  #SSW details:
+  WEIGHTLABEL FAKE
+   DEFAULTWEIGHT 24266
+
+  PROCESS sumstats/bychr/BIOV_broad_eur.chr{CHR_NUM}.txt.gz
+
+   REMOVEFILTERS
+
+ ##81 MGBB. 5059 cases	19765 controls, 24824 subjects.  Not standard PLINK format. Has OR SE and p.value and freq
+ #rsids are indeed in the SNP column
+
+  MARKERLABEL   SNP
+  ALLELELABELS  Allele1 Allele2
+  PVALUELABEL   p.value
+  EFFECT   LOG(OR)
+  FREQLABEL FRQ
+   ADDFILTER FRQ >= 0.01
+   ADDFILTER   FRQ <= 0.99
+  ADDFILTER Info > 0.6
+  CHROMOSOME CHR
+  POSITION POS
+
+  #IVW details
+  STDERR SE
+
+  #SSW details:
+  WEIGHTLABEL FAKE
+   DEFAULTWEIGHT 16113
+
+  PROCESS sumstats/bychr/MGBB_broad_eur.chr{CHR_NUM}.txt.gz
+
+ REMOVEFILTERS
+
+ ##85 HUNT . Email from Caroline on Oct 28, 2020: 3210 cases, 42464 controls.  SAIGE format. Data re-annotated: in some way
+
+ #I think this is already on the log odds scale.
+  MARKERLABEL   SNP
+  ALLELELABELS  Allele2 Allele1
+  PVALUELABEL   p.value
+  EFFECT   BETA
+  FREQLABEL AF_Allele2
+   ADDFILTER  AF_Allele2 >= 0.01
+   ADDFILTER  AF_Allele2 <= 0.99
+  ADDFILTER R2 > 0.6
+  CHROMOSOME CHR
+  POSITION POS
+
+  #IVW details
+  STDERR SE
+
+  #SSW details
+  WEIGHTLABEL FAKE
+   DEFAULTWEIGHT 11938
+
+  PROCESS sumstats/bychr/HUNT_broad_eur.chr{CHR_NUM}.txt.gz
+
+ REMOVEFILTERS
+
+ #89 SWED. SAIGE. 327  cases   9316 controls.
+ #Good to go
+  MARKERLABEL   SNPID
+  ALLELELABELS  Allele2 Allele1
+  PVALUELABEL   p.value
+  EFFECT   BETA
+  FREQLABEL AF_Allele2
+   ADDFILTER AF_Allele2 >= 0.01
+   ADDFILTER  AF_Allele2 <= 0.99
+  ADDFILTER INFO > 0.6
+  CHROMOSOME CHR
+  POSITION POS
+
+  #IVW details
+  STDERR SE
+
+  #SSW details
+  WEIGHTLABEL FAKE
+   DEFAULTWEIGHT 1264
+
+  PROCESS sumstats/bychr/SWED_broad_eur.chr{CHR_NUM}.txt.gz
+
+
+ REMOVEFILTERS
+
+ #90 FING. SAIGE. N = 259794, 9,801 cases and 249,993 controls for PTSD broad definition. Data re-annotated: to hg19
+
+  MARKERLABEL   SNP
+  ALLELELABELS  Allele2 Allele1
+  PVALUELABEL   p.value
+  EFFECT   BETA
+  FREQLABEL AF_Allele2
+   ADDFILTER AF_Allele2 >= 0.01
+   ADDFILTER AF_Allele2 <= 0.99
+  ADDFILTER imputationInfo > 0.6
+  CHROMOSOME CHRNEW
+  POSITION BPNEW
+
+  #IVW details
+  STDERR SE
+
+  #SSW details
+  WEIGHTLABEL FAKE
+   DEFAULTWEIGHT 37725
+
+  PROCESS sumstats/bychr/FING_broad_eur.chr{CHR_NUM}.txt.gz
+
+ REMOVEFILTERS
+
+ #91 UKB2. 9882	 cases 120862 controls, 	130744 total. ReGenie format
+  MARKERLABEL   SNP
+  ALLELELABELS  A1 A2
+  PVALUELABEL   P
+  EFFECT   BETA
+  FREQLABEL FREQ
+   ADDFILTER FREQ >= 0.01
+   ADDFILTER  FREQ <= 0.99
+  ADDFILTER INFO > 0.6
+  CHROMOSOME CHR
+  POSITION BP
+
+  #IVW details
+  STDERR SE
+  #SSW details
+  WEIGHTLABEL FAKE
+   DEFAULTWEIGHT 36541
+
+  PROCESS sumstats/bychr/UKB2_broad_eur.chr{CHR_NUM}.txt.gz
+
+ REMOVEFILTERS
+
+
+#95 BIOM. 318 cases 9264 contorls. Data re-annotated: Had to merge in some allele and frequency information from doner data (DAI2)
+  MARKERLABEL   SNP
+  ALLELELABELS  A1 A2
+  PVALUELABEL   P
+  EFFECT   LOG(OR)
+  FREQLABEL  FRQ_U_36548 #Doner frequencies for now..
+   ADDFILTER FRQ_U_36548 >= 0.01
+   ADDFILTER FRQ_U_36548 <= 0.99
+  CHROMOSOME CHR
+  POSITION BP
+
+  #IVW details
+  STDERR   SE
+
+ ADDFILTER NMISS > 7666 #80% of total N
+
+ #SSW details
+ WEIGHTLABEL FAKE
+   DEFAULTWEIGHT 1230
+
+   PROCESS sumstats/bychr/BIOM_broad_eur.chr{CHR_NUM}.txt.gz
+
+ REMOVEFILTERS
+
+ #98. ESBB. SAIGE. 19723	cases 177970 controls, 197693 total. Data re-annotated: Renamed imputaiton info column since its NA
+
+  MARKERLABEL   SNPID
+  ALLELELABELS  Allele2 Allele1
+  PVALUELABEL   p.value
+  EFFECT   BETA
+  FREQLABEL AF_Allele2
+   ADDFILTER AF_Allele2 >= 0.01
+   ADDFILTER AF_Allele2 <= 0.99
+  CHROMOSOME CHR
+  POSITION POS
+
+  #IVW details
+  STDERR SE
+
+  #SSW details
+  WEIGHTLABEL FAKE
+   DEFAULTWEIGHT 71022
+
+  PROCESS sumstats/bychr/ESBB_broad_eur.chr{CHR_NUM}.txt.gz
+
+ REMOVEFILTERS
+
+#99. MAYO.  1121 cases and 6136 (correspondence feb 25, 2021). PLINK format with some extras. Data re-annotated: The A1 is NOT the coded allele, and the A1_Freq is in reference to the coded allele (the ALT allele). See recoding sheet!
+
+  MARKERLABEL   RSID
+  ALLELELABELS   A2 A1 #Brandon says on April 15 that A2 is the counted allele.
+  #I should still verify for top hits
+  PVALUELABEL   P
+  EFFECT   LOG(OR)
+  STDERR   LOG(OR)_SE
+  FREQLABEL A1_FREQ
+   ADDFILTER A1_FREQ >= 0.01
+   ADDFILTER A1_FREQ <= 0.99
+  CHROMOSOME CHROM
+  POSITION POS
+  WEIGHTLABEL FAKE
+   DEFAULTWEIGHT 3792
+
+  PROCESS sumstats/bychr/MAYO_broad_eur.chr{CHR_NUM}.txt.gz
+
+ REMOVEFILTERS
+
+###Group 5: Million veteran program
+  #MARKERLABEL   rsid
+  #ALLELELABELS  Allele1 Allele2
+  #CHROMOSOME CHR
+  #POSITION BP
+  #EFFECT BETA
+  #STDERR SE
+  #PVALUELABEL   P
+  #FREQLABEL Freq1
+   #ADDFILTER Freq1 >= 0.01
+   #ADDFILTER Freq1 <= 0.99
+  #MARKERLABEL  rsid
+  #WEIGHTLABEL FAKE
+  #DEFAULTWEIGHT NA
+  #PROCESS sumstats/bychr/MVP_broad_eur.chr{CHR_NUM}.txt.gz
+
+OUTFILE metal_results/eur_ptsd_pcs_v4_chr{CHR_NUM}_nov15_2021_ .tbl
+ANALYZE
+QUIT
